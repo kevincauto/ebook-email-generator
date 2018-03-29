@@ -14,6 +14,8 @@ class Container extends React.Component {
       month: undefined,
       year: undefined,
       id_ebook: {},
+      idt_ebook: {},
+      cced_ebook: {},
     };
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleTemplateChange = this.handleTemplateChange.bind(this);

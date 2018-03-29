@@ -24,19 +24,11 @@ export default class CCEDLiveWebinarHTML extends React.Component {
   render() {
     //Import data from the form fields.
     let {
-      title = 'To Be Updated',
-      date = 'Date To Be Updated',
-      link,
-      description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      lo1, lo2, lo3, headshot,
-      presenter = 'Lorem Ipsum, DDS',
-      provider = '',
-      supporter = '',
-      cost = '',
-      credits = '',
-      tvLink, tagline, unsubscribe, disclosure,
       emailName = '',
-      cta = 'View the Webinar'
+      title = 'To Be Updated',
+      link,
+      img = 'http://placehold.it/300x350',
+      sponsorImg = 'http://placehold.it/50x30'
     } = this.props.info[this.props.info.selected_template];
 
     let { month, year } = this.props.info;
@@ -52,11 +44,8 @@ export default class CCEDLiveWebinarHTML extends React.Component {
       .replace(/^-+/, '')             // Trim - from start of text
       .replace(/-+$/, '');            // Trim - from end of text
 
-    let url = `http://aegispublications.com/news/cced/${year}/${month}/${emailName}.html`;
+    let url = `http://aegispublications.com/news/id/${year}/${month}/${emailName}.html`;
 
-    //Set up a dummy image when the template first loads.
-    let image = 'http://placehold.it/140x180';
-    if (headshot) { image = headshot }
 
     //Prevent whitespace from messing up link.
     if (link) { link = link.trim() };
@@ -95,7 +84,7 @@ export default class CCEDLiveWebinarHTML extends React.Component {
             <br>
             SPONSORED BY: </div>
             <div style="font-family:Gotham,sans-serif;font-size:14px; color:#000000; width:267px; clear:both;">
-                <img src="${sponsorImg}" alt="client logo"  style="vertical-align:bottom; margin:4px 0 0 0;">    
+                <img src="${sponsorImg}" alt="sponsor logo"  style="vertical-align:bottom; margin:4px 0 0 0;">    
             </div>
             <div style="font-family:Gotham,sans-serif;font-size:14px; color:#000000; width:267px; clear:both;">
             <br>
@@ -121,26 +110,7 @@ export default class CCEDLiveWebinarHTML extends React.Component {
 
 
     //Text Email        
-    let textEmail = `Compendium Webinar
-
-${title}       
-${link}
-
-Presenter: ${presenter}
-Date: ${date}
-Provider: ${provider}
-Commercial Supporter: ${supporter}
-Cost: ${cost}
-CDE Credits: ${credits}
-
-Description:\n${description}\n${lo1 && lo2 && lo3 ? `\nLearning Objectives:\n${lo1}\n${lo2}\n${lo3}\n` : ''}${disclosure ? `\nDisclosure:\n${disclosure}\n` : ``}\n${link}
-
-${tvLink ? `Be sure to test your setup here BEFORE the Webinar to ensure everything is working properly!
-${tvLink}
-
-Webinar Hardware/Software Requirements
-CDEWorld requires Internet Explorer® version 7.0 or higher, or Firefox 3.0 or higher, a computer running Windows® XP, Windows® Vista, Windows® 7, or Mac OS X, 512MB of RAM or greater, 1.5 GHZ or faster processor, and a screen resolution of 1024x768 or higher. This activity will be marked with the information and/or links to the required software. That software may be Adobe® Acrobat®, Windows Media®Player or Microsoft® Silverlight™.`: ``}
-`;
+    let textEmail = ``;
 
     let html = first;
 
