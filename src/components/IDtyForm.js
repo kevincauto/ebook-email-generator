@@ -8,7 +8,7 @@ const FIELDS = [
   { label: 'Sponsor Image Source Link', name: 'sponsorImg' }
 ];
 
-export default class CCEDLiveWebinarForm extends React.Component {
+export default class IDtyForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleTextChange = this.handleTextChange.bind(this);
@@ -63,13 +63,9 @@ export default class CCEDLiveWebinarForm extends React.Component {
             fullWidth={true}
           >
             <option value="">Select an Email List  </option>
-            <option value="%%PLUGIN_UNSUBSCRIBE: 2144642-UNSUBSCRIBE%%">CCED Webinar List | 3.27.17</option>
-            <option value="%%PLUGIN_UNSUBSCRIBE: 2146841-UNSUBSCRIBE%%">IDT - Newsletter | 3.30.17</option>
-            <option value="%%PLUGIN_UNSUBSCRIBE: 2192269-UNSUBSCRIBE%%">ID Webinar List</option>
-            <option value="%%PLUGIN_UNSUBSCRIBE: 2145051-UNSUBSCRIBE%%">CDEWorld Webinar List | 3.28.17</option>
-            <option value="%%PLUGIN_UNSUBSCRIBE: 2200418-UNSUBSCRIBE%%">Nobel Webinar List | 3.28.17</option>
-            <option value="%%PLUGIN_UNSUBSCRIBE: 2147849-UNSUBSCRIBE%%">CDEWorld - Lab | 4.3.17</option>
-            <option value="%%PLUGIN_UNSUBSCRIBE: 2145051-UNSUBSCRIBE%% ">CDEWorld Webinar List | 3.28.17</option>
+
+            <option value="%%PLUGIN_UNSUBSCRIBE: 1635405-UNSUBSCRIBE%%">CDEW ebook List</option>
+
           </select>
         </div>
         <div id="month-dropdown" className="label">

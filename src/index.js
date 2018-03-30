@@ -3,19 +3,19 @@ import ReactDOM from 'react-dom';
 // import _ from 'lodash';
 import './index.css';
 
-import IDEbookForm from './components/IDEbookForm';
-import IDEbookHTML from './components/IDEbookHTML';
+import IDtyForm from './components/IDtyForm';
+import IDtyHTML from './components/IDtyHTML';
 
 class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected_template: 'id_ebook',
+      selected_template: 'id_ty',
       month: undefined,
       year: undefined,
-      id_ebook: {},
-      idt_ebook: {},
-      cced_ebook: {},
+      id_ty: {},
+      idt_ty: {},
+      cced_ty: {},
     };
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleTemplateChange = this.handleTemplateChange.bind(this);
@@ -92,9 +92,9 @@ class Form extends React.Component {
 
   render() {
     let displayForm;
-    if (this.props.info.selected_template === 'id_ebook') {
+    if (this.props.info.selected_template === 'id_ty') {
       displayForm = (
-        <IDEbookForm
+        <IDtyForm
           info={this.props.info}
           onTextChange={this.handleTextChange}
           onDateChange={this.handleDateChange}
@@ -111,7 +111,7 @@ class Form extends React.Component {
           onChange={this.handleTemplateChange}
         >
           <option value="">Select an Email Template</option>
-          <option value="id_ebook">ID eBook</option>
+          <option value="id_ty">ID Thank You Email</option>
 
 
         </select>
@@ -125,7 +125,7 @@ class Form extends React.Component {
 class TextResults extends React.Component {
   render() {
     let htmlDisplay = "Nothing to display right now.";
-    if (this.props.info.selected_template === 'id_ebook') { htmlDisplay = <IDEbookHTML info={this.props.info} /> }
+    if (this.props.info.selected_template === 'id_ty') { htmlDisplay = <IDtyHTML info={this.props.info} /> }
 
     return (
       <div id="text-results">
