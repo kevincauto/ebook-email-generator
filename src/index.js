@@ -16,6 +16,10 @@ class Container extends React.Component {
       id_ty: {},
       idt_ty: {},
       cced_ty: {},
+      id_announce: {},
+      idt_announce: {},
+      cced_announce: {},
+      cdew_announce: {}
     };
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleTemplateChange = this.handleTemplateChange.bind(this);
