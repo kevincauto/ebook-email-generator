@@ -2,7 +2,7 @@ import React from 'react';
 import DOMPurify from 'dompurify';
 import { saveAs } from 'file-saver';
 
-export default class CCEDLiveWebinarHTML extends React.Component {
+export default class IDTtyHTML extends React.Component {
   downloadHtml(html, fileName) {
     if (!fileName) {
       alert("This email needs a name in order to be downloaded.");
