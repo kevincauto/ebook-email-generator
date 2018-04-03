@@ -5,12 +5,24 @@ import './index.css';
 
 import IDtyForm from './components/IDtyForm';
 import IDtyHTML from './components/IDtyHTML';
+import IDTtyForm from './components/IDTtyForm';
+import IDTtyHTML from './components/IDTtyHTML';
+import CCEDtyForm from './components/CCEDtyForm';
+import CCEDtyHTML from './components/CCEDtyHTML';
+import IDAnnounceForm from './components/IDAnnounceForm';
+import IDAnnounceHTML from './components/IDAnnounceHTML';
+import IDTAnnounceForm from './components/IDTAnnounceForm';
+import IDTAnnounceHTML from './components/IDTAnnounceHTML';
+import CCEDAnnounceForm from './components/CCEDAnnounceForm';
+import CCEDAnnounceHTML from './components/CCEDAnnounceHTML';
+import CDEWAnnounceForm from './components/CDEWAnnounceForm';
+import CDEWAnnounceHTML from './components/CDEWAnnounceHTML';
 
 class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected_template: 'id_ty',
+      selected_template: 'id_announce',
       month: undefined,
       year: undefined,
       id_ty: {},
@@ -105,7 +117,60 @@ class Form extends React.Component {
         />
       );
     }
-
+    if (this.props.info.selected_template === 'idt_ty') {
+      displayForm = (
+        <IDTtyForm
+          info={this.props.info}
+          onTextChange={this.handleTextChange}
+          onDateChange={this.handleDateChange}
+        />
+      );
+    }
+    if (this.props.info.selected_template === 'cced_ty') {
+      displayForm = (
+        <CCEDtyForm
+          info={this.props.info}
+          onTextChange={this.handleTextChange}
+          onDateChange={this.handleDateChange}
+        />
+      );
+    }
+    if (this.props.info.selected_template === 'id_announce') {
+      displayForm = (
+        <IDAnnounceForm
+          info={this.props.info}
+          onTextChange={this.handleTextChange}
+          onDateChange={this.handleDateChange}
+        />
+      );
+    }
+    if (this.props.info.selected_template === 'idt_announce') {
+      displayForm = (
+        <IDTAnnounceForm
+          info={this.props.info}
+          onTextChange={this.handleTextChange}
+          onDateChange={this.handleDateChange}
+        />
+      );
+    }
+    if (this.props.info.selected_template === 'cced_announce') {
+      displayForm = (
+        <CCEDAnnounceForm
+          info={this.props.info}
+          onTextChange={this.handleTextChange}
+          onDateChange={this.handleDateChange}
+        />
+      );
+    }
+    if (this.props.info.selected_template === 'cdew_announce') {
+      displayForm = (
+        <CDEWAnnounceForm
+          info={this.props.info}
+          onTextChange={this.handleTextChange}
+          onDateChange={this.handleDateChange}
+        />
+      );
+    }
 
     return (
       <div id="main-form">
@@ -116,8 +181,12 @@ class Form extends React.Component {
         >
           <option value="">Select an Email Template</option>
           <option value="id_ty">ID Thank You Email</option>
-
-
+          <option value="idt_ty">IDT Thank You Email</option>
+          <option value="cced_ty">CCED Thank You Email</option>
+          <option value="id_announce">ID Announcement Email</option>
+          <option value="idt_announce">IDT Announcement Email</option>
+          <option value="cced_announce">CCED Announcement Email</option>
+          <option value="cdew_announce">CDEW Announcement Email</option>
         </select>
 
         {displayForm}
@@ -130,7 +199,12 @@ class TextResults extends React.Component {
   render() {
     let htmlDisplay = "Nothing to display right now.";
     if (this.props.info.selected_template === 'id_ty') { htmlDisplay = <IDtyHTML info={this.props.info} /> }
-
+    if (this.props.info.selected_template === 'idt_ty') { htmlDisplay = <IDTtyHTML info={this.props.info} /> }
+    if (this.props.info.selected_template === 'cced_ty') { htmlDisplay = <CCEDtyHTML info={this.props.info} /> }
+    if (this.props.info.selected_template === 'id_announce') { htmlDisplay = <IDAnnounceHTML info={this.props.info} /> }
+    if (this.props.info.selected_template === 'idt_announce') { htmlDisplay = <IDTAnnounceHTML info={this.props.info} /> }
+    if (this.props.info.selected_template === 'cced_announce') { htmlDisplay = <CCEDAnnounceHTML info={this.props.info} /> }
+    if (this.props.info.selected_template === 'cdew_announce') { htmlDisplay = <CDEWAnnounceHTML info={this.props.info} /> }
     return (
       <div id="text-results">
         {htmlDisplay}

@@ -1,7 +1,6 @@
 import React from 'react';
 
 const FIELDS = [
-  { label: 'Email Name', name: 'emailName' },
   { label: 'Title', name: 'title' },
   { label: 'Link', name: 'link' },
   { label: 'Ebook Image Source Link', name: 'img' },
@@ -46,61 +45,6 @@ export default class IDTtyForm extends React.Component {
     return (
       <div className="form">
         <h3>2. Complete the information below.</h3>
-        <div className="label">
-          <input
-            type="text"
-            name="emailName"
-            value={this.props.info[this.props.info.selected_template].emailName}
-            onChange={this.handleTextChange}
-            placeholder="Email Name"
-          />
-        </div>
-        <div className="label">
-          <select
-            name="unsubscribe"
-            value={this.props.info[this.props.info.selected_template].list}
-            onChange={this.handleTextChange}
-            fullWidth={true}
-          >
-            <option value="">Select an Email List  </option>
-
-            <option value="%%PLUGIN_UNSUBSCRIBE: 1635405-UNSUBSCRIBE%%">CDEW ebook List</option>
-
-          </select>
-        </div>
-        <div id="month-dropdown" className="label">
-          <select
-            name="month"
-            value={this.props.info.month}
-            onChange={this.handleDateChange}
-          >
-            <option value="1">Send Month: January</option>
-            <option value="2">Send Month: February</option>
-            <option value="3">Send Month: March</option>
-            <option value="4">Send Month: April</option>
-            <option value="5">Send Month: May</option>
-            <option value="6">Send Month: June</option>
-            <option value="7">Send Month: July</option>
-            <option value="8">Send Month: August</option>
-            <option value="9">Send Month: September</option>
-            <option value="10">Send Month: October</option>
-            <option value="11">Send Month: November</option>
-            <option value="12">Send Month: December</option>
-          </select>
-        </div>
-        <div id="year-dropdown" className="label">
-          <select
-            name="year"
-            value={this.props.info.year}
-            onChange={this.handleDateChange}
-          >
-            <option value="2017">Send Year: 2017</option>
-            <option value="2018">Send Year: 2018</option>
-            <option value="2019">Send Year: 2019</option>
-            <option value="2020">Send Year: 2020</option>
-            <option value="2021">Send Year: 2021</option>
-          </select>
-        </div>
         {this.renderForm()}
       </div>
     )

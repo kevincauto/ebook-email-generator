@@ -28,7 +28,7 @@ export default class CCEDLiveWebinarHTML extends React.Component {
       title = 'To Be Updated',
       link,
       img = 'http://placehold.it/300x350',
-      sponsorImg = 'http://placehold.it/50x30'
+      sponsorImg = 'http://placehold.it/100x30'
     } = this.props.info[this.props.info.selected_template];
 
     let { month, year } = this.props.info;
@@ -55,7 +55,7 @@ export default class CCEDLiveWebinarHTML extends React.Component {
     <html>
     <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>${title}</title>
     </head>
     
     <body>
@@ -71,52 +71,32 @@ export default class CCEDLiveWebinarHTML extends React.Component {
           <tr>
           <td align="center"><img src="http://aegispublications.com/news/cced/2017/03/clinical-ebook-series-4.png"  alt="" style="margin:14px 0 14px 0;"/></td>
         </tr>
-    <!--    <tr>
-          <td align="center"><div style="font-family:Gotham,sans-serif;font-size:16px;padding:14px 0 14px 0; width:580px">Thank you for downloading <strong> Infection Control</strong></div></td>
-        </tr>-->
+
         <tr>
           <td style="background-image:url(http://aegispublications.com/news/idt/2016/06/ebook-base.png); background-repeat:repeat-x; background-position:bottom;"><table width="612" border="0" cellspacing="0" cellpadding="0">
             <tbody>
               <tr>
                 <td width="259" rowspan="2" valign="top" style="font-size:10px; color:#656464;">
-                  <a href="https://www.dentalaegis.com/cced/ebooks/current-topics-in-implantology" target="_blank"><img src="http://aegispublications.com/news/cced/2018/03/email-lg.png" width="253" alt="" style="margin:0 17px 0 19px;"/></a>
-                    <div style="margin:7px 0 0 24px;">
-                      SUPPORTED BY: <br>
-                          <img src="https://cdeworld.com/media/5725"  style="margin:4px 0 0 0;" alt="client logo" width="100">
-                    </div> 
+                  <a href="${link}" target="_blank"><img src="${img}" width="253" alt="" style="margin:0 17px 0 19px;"/></a>
+
                 </td>
                 <td width="353" height="66" valign="top" style="padding:0 54px 0 0;">
                 <div style="font-family:Gotham,sans-serif;font-size:16px;padding:14px 0 14px 0;">Thank you for downloading <strong> <br>
-                  Current Topics in Implantology</strong>.</div>
+                  ${title}</strong>.</div>
                   <div style="font-size:13px; color:#656464;">
-            You recently downloaded <strong>Clinical eBook Series: Current Topics in Implantology</strong>. We hope you enjoyed it!
-    If you found the information useful, please consider <a href="mailto:?subject=Forward:%20Compendium%20eBooks&amp;body=I%20thought%20you%20might%20be%20interested%20in%20this:%20https://www.dentalaegis.com/cced/ebooks/current-topics-in-implantology" style="text-decoration:none;color:#87764b" target="_blank" data-hs-link-id="0">sharing it with colleague</a>.
+            You recently downloaded <strong>${title}</strong>. We hope you enjoyed it!
+    If you found the information useful, please consider <a href="mailto:?subject=Forward:%20Compendium%20eBooks&amp;body=I%20thought%20you%20might%20be%20interested%20in%20this:%20${link}" style="text-decoration:none;color:#87764b" target="_blank" data-hs-link-id="0">sharing it with colleague</a>.
             <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+           
                   </div>
                   </td>
               </tr>
               <tr>
                 <td valign="top" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; font-size:10px; color:#000000; font-family:'Arial', sans-serif">
-                  <!--<div style="margin:7px 0 0 0;">
+                  <div style="margin:7px 0 0 0;">
                       SUPPORTED BY: <br>
-                          <img src="http://aegispublications.com/news/cced/2017/02/scican-logo.jpg"  style="margin:4px 0 0 0; width:107px;" alt="client logo">
-                    </div>--> 
+                          <img src="${sponsorImg}"  style="margin:4px 0 0 0; width:107px;" alt="client logo">
+                    </div>
                 </td>
               </tr>
               
@@ -162,17 +142,6 @@ export default class CCEDLiveWebinarHTML extends React.Component {
             </tbody>
           </table></td>
           </tr>
-    <!--    <tr>
-          <td>&nbsp;</td>
-        </tr>
-         <tr>
-              <td align="center" style="font-size:10px;">AEGIS Communications | 104 Pheasant Run, Suite 105 | Newtown, PA 18940<br>
-                To ensure delivery, please add reply-289795@news.aegispublications.com to your address book
-                <br>
-                %%PLUGIN_UNSUBSCRIBE: 1089099-CCED UNSUBSCRIBE%% <br>
-              <br>
-              </td>
-          </tr>-->
       </tbody>
     </table>
     </center>

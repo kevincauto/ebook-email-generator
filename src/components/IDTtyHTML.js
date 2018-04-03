@@ -24,11 +24,11 @@ export default class IDTtyHTML extends React.Component {
   render() {
     //Import data from the form fields.
     let {
-      emailName = '',
+      emailName = 'undefined',
       title = 'To Be Updated',
       link,
       img = 'http://placehold.it/300x350',
-      sponsorImg = 'http://placehold.it/50x30'
+      sponsorImg = 'http://placehold.it/100x30'
     } = this.props.info[this.props.info.selected_template];
 
     let { month, year } = this.props.info;
@@ -44,7 +44,7 @@ export default class IDTtyHTML extends React.Component {
       .replace(/^-+/, '')             // Trim - from start of text
       .replace(/-+$/, '');            // Trim - from end of text
 
-    let url = `http://aegispublications.com/news/id/${year}/${month}/${emailName}.html`;
+    let url = `http://aegispublications.com/news/idt/${year}/${month}/${emailName}.html`;
 
 
     //Prevent whitespace from messing up link.
@@ -55,39 +55,37 @@ export default class IDTtyHTML extends React.Component {
     <html>
       <head>
         <meta charset="UTF-8">
-          <title></title>
+          <title>${title}</title>
       </head>
   
         <body>
           <center>
             <table width="612" border="0" cellspacing="0" cellpadding="0" style="font-family:Gotham, sans-serif; border:solid 1px #e7e7e8; color:#000000; background-color:#ffffff;">
               <tbody>
-                <tr>
-                  <td align="center" style="font-size:11px; line-height:27px;">Having trouble viewing this email? <a href="http://aegispublications.com/news/idt/2018/03/thankyou-straumann.html" target="_blank" style="color:#db1f28; text-decoration:none;">Click here</a>.</td>
-                </tr>
+
                 <tr>
                   <td><img src="http://aegispublications.com/news/idt/2016/06/ebook-header.png" width="503" height="138" alt="" style="margin:0 0 14px 24px;" /></td>
                 </tr>
                 <tr>
-                  <td align="center"><div style="font-family:Gotham,sans-serif;font-size:16px;padding:14px 0 14px 0; width:490px; text-align:center;">Thank you for downloading <strong>WHERE WILL YOUR LAB BE 5 Years from NOW?</strong></div></td>
+                  <td align="center"><div style="font-family:Gotham,sans-serif;font-size:16px;padding:14px 0 14px 0; width:490px; text-align:center;">Thank you for downloading <strong>${title}</strong></div></td>
                 </tr>
                 <tr>
                   <td style="background-image:url(http://aegispublications.com/news/idt/2016/06/ebook-base.png); background-repeat:repeat-x; background-position:bottom;"><table width="612" border="0" cellspacing="0" cellpadding="0">
                     <tbody>
                       <tr>
                         <td width="259">
-                          <a href="https://www.dentalaegis.com/idt/ebooks/where-will-your-lab-be-5-years-from-now" target="_blank"><img src="http://aegispublications.com/news/idt/2018/03/idt-email-lg.png" width="253" height="329" alt="" style="margin:0 17px 0 19px;" /></a>
+                          <a href="${link}" target="_blank"><img src="${img}" width="253" height="329" alt="" style="margin:0 17px 0 19px;" /></a>
                         </td>
                         <td width="353" style="padding:0 54px 0 0;">
                           <div style="font-family:Gotham,sans-serif;font-size:14px; color:#000000; width:267px;">
-                            You recently downloaded <strong>WHERE WILL YOUR LAB BE 5 Years from NOW?</strong>.
-  We hope you enjoyed it! If you found the information useful, please consider <a href="mailto:?subject=Forward: Inside Dental Technology eBooks&amp;body=I thought you might be interested in this: https://www.dentalaegis.com/idt/ebooks/where-will-your-lab-be-5-years-from-now" style="text-decoration:none;color:#c61f27" target="_blank" data-hs-link-id="0">sharing it with colleagues</a>. </div>
+                            You recently downloaded <strong>${title}</strong>.
+  We hope you enjoyed it! If you found the information useful, please consider <a href="mailto:?subject=Forward: Inside Dental Technology eBooks&amp;body=I thought you might be interested in this: ${link}" style="text-decoration:none;color:#c61f27" target="_blank" data-hs-link-id="0">sharing it with colleagues</a>. </div>
                           <div style="font-family:Gotham,sans-serif;font-size:14px; color:#000000; width:267px; clear:both;">
                             <br>
                               <br>
                                 Sponsored by: </div>
                               <div style="font-family:Gotham,sans-serif;font-size:14px; color:#000000; width:267px; clear:both;">
-                                <img src="https://www.aegisdentalnetwork.com/media/thumbnail/67461/140x140" width="110" style="margin:7px 0 0 0;" alt="Client logo">    
+                                <img src="${sponsorImg}" width="110" style="margin:7px 0 0 0;" alt="Client logo">    
           </div>
                                 <div style="font-family:Gotham,sans-serif;font-size:14px; color:#000000; width:267px; clear:both;">
                                   <br>

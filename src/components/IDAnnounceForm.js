@@ -3,6 +3,8 @@ import React from 'react';
 const FIELDS = [
   { label: 'Email Name', name: 'emailName' },
   { label: 'Title', name: 'title' },
+  { label: 'Author', name: 'author' },
+  { label: 'Description', name: 'description' },
   { label: 'Link', name: 'link' },
   { label: 'Ebook Image Source Link', name: 'img' },
   { label: 'Sponsor Image Source Link', name: 'sponsorImg' }
@@ -47,15 +49,6 @@ export default class IDAnnounceForm extends React.Component {
       <div className="form">
         <h3>2. Complete the information below.</h3>
         <div className="label">
-          <input
-            type="text"
-            name="emailName"
-            value={this.props.info[this.props.info.selected_template].emailName}
-            onChange={this.handleTextChange}
-            placeholder="Email Name"
-          />
-        </div>
-        <div className="label">
           <select
             name="unsubscribe"
             value={this.props.info[this.props.info.selected_template].list}
@@ -63,9 +56,10 @@ export default class IDAnnounceForm extends React.Component {
             fullWidth={true}
           >
             <option value="">Select an Email List  </option>
-
-            <option value="%%PLUGIN_UNSUBSCRIBE: 1635405-UNSUBSCRIBE%%">CDEW ebook List</option>
-
+            <option value="%%PLUGIN_UNSUBSCRIBE: 1654490-UNSUBSCRIBE%%">ID eBook List</option>
+            <option value="%%PLUGIN_UNSUBSCRIBE: 2145850-UNSUBSCRIBE%% ">IDT eBook List</option>
+            <option value="%%PLUGIN_UNSUBSCRIBE: 2141821-UNSUBSCRIBE%%">CCED eBook List</option>
+            <option value="%%PLUGIN_UNSUBSCRIBE: 1635405-UNSUBSCRIBE%%">CDEW eBook List</option>
           </select>
         </div>
         <div id="month-dropdown" className="label">
@@ -94,11 +88,11 @@ export default class IDAnnounceForm extends React.Component {
             value={this.props.info.year}
             onChange={this.handleDateChange}
           >
-            <option value="2017">Send Year: 2017</option>
             <option value="2018">Send Year: 2018</option>
             <option value="2019">Send Year: 2019</option>
             <option value="2020">Send Year: 2020</option>
             <option value="2021">Send Year: 2021</option>
+            <option value="2022">Send Year: 2022</option>
           </select>
         </div>
         {this.renderForm()}
