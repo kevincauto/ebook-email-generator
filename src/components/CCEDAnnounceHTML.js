@@ -25,7 +25,14 @@ export default class IDTtyHTML extends React.Component {
     //Import data from the form fields.
     let {
       emailName = 'undefined',
-      title = 'To Be Updated',
+      ebookTitle = 'Insert Title',
+      title1 = 'Insert Title',
+      author1 = '',
+      provider1 = '',
+      title2 = '',
+      author2 = '',
+      provider2 = '',
+      unsubscribe = '%%PLUGIN_UNSUBSCRIBE: 2141821-UNSUBSCRIBE%%',
       link,
       img = 'http://placehold.it/300x350',
       sponsorImg = 'http://placehold.it/100x30'
@@ -55,7 +62,7 @@ export default class IDTtyHTML extends React.Component {
     <html>
     <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>${ebookTitle}</title>
     </head>
     
     <body bgcolor="#efefef">
@@ -63,7 +70,7 @@ export default class IDTtyHTML extends React.Component {
     <table width="612" border="0" cellspacing="0" cellpadding="0"  style="font-family:Gotham, sans-serif; border:solid 1px #e7e7e8; color:#000000;" bgcolor="#ffffff">
       <tbody>
         <tr>
-          <td align="center" style="font-size:11px; line-height:27px;"><a href="https://dentalaegis.com" style="color:#fff;" target="_blank"> </a>Having trouble viewing this email? <a href="http://aegispublications.com/news/cced/2018/03/ebook-implant.html" target="_blank" style="color:#87764b; text-decoration:none;">Click here</a>.<br></td>
+          <td align="center" style="font-size:11px; line-height:27px;"><a href="https://dentalaegis.com" style="color:#fff;" target="_blank"> </a>Having trouble viewing this email? <a href="http://aegispublications.com/news/cced/${year}/${month}/${emailName}.html" target="_blank" style="color:#87764b; text-decoration:none;">Click here</a>.<br></td>
         </tr>
         <tr>
           <td align="center" valign="top" bgcolor="#87764b"><a href="https://dentalaegis.com/cced" target="_blank"><img src="http://aegispublications.com/news/cced/2017/03/logo-white.png" alt="Compendium of Continuing Education in Dentistry" style="margin:10px 0 10px 24px; width:322px;"/></a></td>
@@ -76,22 +83,24 @@ export default class IDTtyHTML extends React.Component {
             <tbody>
               <tr>
                 <td width="259" rowspan="2" valign="top" style="font-size:10px; color:#656464;">
-                  <a href="https://www.dentalaegis.com/cced/ebooks/current-topics-in-implantology" target="_blank"><img src="http://aegispublications.com/news/cced/2018/03/email-lg.png" width="253" style="margin:0 17px 0 19px;"/></a>
+                  <a href="${link}" target="_blank"><img src="${img}" width="253" style="margin:0 17px 0 19px;"/></a>
                     <div style="margin:7px 0 0 24px;">
                       SUPPORTED BY: <br>
-                          <img src="https://cdeworld.com/media/5725"  style="margin:4px 0 0 0;" alt="client logo" width="100">
+                          <img src="${sponsorImg}"  style="margin:4px 0 0 0;" alt="client logo" width="100">
                     </div> 
-                     
+                     <br />
                 </td>
                 <td width="353" height="66" valign="top" style="padding:0 32px 0 0;">
-                  <div style="font-size:16px; margin:6px 0 14px 0; color:#87764b;"><strong>Current Topics in Implantology</strong></div>
+                  <div style="font-size:16px; margin:6px 0 14px 0; color:#87764b;"><strong>${ebookTitle}</strong></div>
                   <div style="font-size:13px; color:#656464;">
-            <strong>CE 1: Risk Indicators and Prevention of Implant Soft-Tissue Complications: Interproximal Papillae Loss and Midfacial Implant Mucosal Recessions</strong><br><em>James Mailoa, DDS; Richard J. Miron, DMD, DDS, MSc, PhD; and Hom-Lay Wang, DDS, MSD, PhD</em><br>Provider: AEGIS Publications, LLC<br><br>
+            <strong>${title1}</strong><br>
+            ${author1 ? `<em>${author1}</em><br>` : ``}
+            Provider: ${provider1}<br><br>
     
-    
-    <strong>CE 2: Risks and Benefits of Probing Around Natural 
-    Teeth and Dental Implants
-    </strong><br><em>Stuart J. Froum, DDS; and Wendy C.W. Wang, BDS, MSc</em><br>Provider: AEGIS Publications, LLC
+    ${title2 ? `<strong>${title2}
+    </strong><br>
+    ${author2 ? `<em>${author2}</em><br>` : ``}
+    Provider: ${provider2}` : ``}
     <br>
     <br>
                   </div>
@@ -151,7 +160,7 @@ export default class IDTtyHTML extends React.Component {
                 <br>
                 You received this e-mail because you are a customer of <a href="https://www.aegisdentalnetwork.com" target="_blank" style="color:#818181; text-decoration:none;">AEGIS Dental Network</a> | <em>Compendium</em>.<br />
                 To ensure delivery, please add <a href="mailto:215892@news.aegispublications.com" target="_blank" style="color:#818181 !important; text-decoration:none !important;">reply-207852@news.aegispublications.com</a> to your address book.<br />
-                %%PLUGIN_UNSUBSCRIBE: 2141821-UNSUBSCRIBE%%<br />
+                ${unsubscribe}<br />
     <em>Compendium,</em> an AEGIS Publication | 104 Pheasant Run, Suite 105 | Newtown, PA 18940 | <a href="https://www.aegisdentalnetwork.com/privacy-policy" target="_blank" style="color:#818181; text-decoration:none;">Privacy Policy</a></td>
         </tr>
       </tbody>
@@ -164,14 +173,14 @@ export default class IDTtyHTML extends React.Component {
     </map>
     
     <map name="Map2">
-      <area shape="rect" coords="3,2,191,24" href="https://www.dentalaegis.com/cced/ebooks/current-topics-in-implantology" target="_blank">
+      <area shape="rect" coords="3,2,191,24" href="${link}" target="_blank">
       <area shape="rect" coords="4,28,142,52" href="https://www.dentalaegis.com/cced/ebooks/" target="_blank">
-      <area shape="rect" coords="188,5,255,111" href="https://www.dentalaegis.com/cced/ebooks/current-topics-in-implantology" target="_blank">
+      <area shape="rect" coords="188,5,255,111" href="${link}" target="_blank">
     </map>
     </body></html>
     `
     //Text Email        
-    let textEmail = ``;
+    let textEmail = `Compendimu eBook\n\n${ebookTitle}\n\n${title1}\n\n${title2}Download the Free Ebook!\n${link}`;
 
     let html = first;
 

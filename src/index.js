@@ -22,7 +22,7 @@ class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected_template: 'id_announce',
+      selected_template: 'cdew_announce',
       month: undefined,
       year: undefined,
       id_ty: {},
@@ -188,7 +188,6 @@ class Form extends React.Component {
           <option value="cced_announce">CCED Announcement Email</option>
           <option value="cdew_announce">CDEW Announcement Email</option>
         </select>
-
         {displayForm}
       </div>
     );

@@ -2,7 +2,13 @@ import React from 'react';
 
 const FIELDS = [
   { label: 'Email Name', name: 'emailName' },
-  { label: 'Title', name: 'title' },
+  { label: 'eBook Title', name: 'ebookTitle' },
+  { label: 'First CE Title', name: 'title1' },
+  { label: 'First Author', name: 'author1' },
+  { label: 'First Provider', name: 'provider1' },
+  { label: 'Second CE Title', name: 'title2' },
+  { label: 'Second Author', name: 'author2' },
+  { label: 'Second Provider', name: 'provider2' },
   { label: 'Link', name: 'link' },
   { label: 'Ebook Image Source Link', name: 'img' },
   { label: 'Sponsor Image Source Link', name: 'sponsorImg' }

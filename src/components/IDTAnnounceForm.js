@@ -3,6 +3,7 @@ import React from 'react';
 const FIELDS = [
   { label: 'Email Name', name: 'emailName' },
   { label: 'Title', name: 'title' },
+  { label: 'Description', name: 'description' },
   { label: 'Link', name: 'link' },
   { label: 'Ebook Image Source Link', name: 'img' },
   { label: 'Sponsor Image Source Link', name: 'sponsorImg' }
@@ -55,7 +56,7 @@ export default class IDTAnnounceForm extends React.Component {
           >
             <option value="">Select an Email List  </option>
             <option value="%%PLUGIN_UNSUBSCRIBE: 1654490-UNSUBSCRIBE%%">ID eBook List</option>
-            <option value="%%PLUGIN_UNSUBSCRIBE: 2145850-UNSUBSCRIBE%% ">IDT eBook List</option>
+            <option value="%%PLUGIN_UNSUBSCRIBE: 2145850-UNSUBSCRIBE%%">IDT eBook List</option>
             <option value="%%PLUGIN_UNSUBSCRIBE: 2141821-UNSUBSCRIBE%%">CCED eBook List</option>
             <option value="%%PLUGIN_UNSUBSCRIBE: 1635405-UNSUBSCRIBE%%">CDEW eBook List</option>
           </select>

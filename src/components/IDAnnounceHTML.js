@@ -29,7 +29,7 @@ export default class IDTtyHTML extends React.Component {
       author = '',
       description = 'Lorem ipsume dolar emet hortus delirios mentas.  Lorem ipsume dolar emet hortus delirios mentas.',
       link,
-      unsubscribe,
+      unsubscribe = "%%PLUGIN_UNSUBSCRIBE: 1654490-UNSUBSCRIBE%%",
       img = 'http://placehold.it/300x350',
       sponsorImg = 'http://placehold.it/100x30'
     } = this.props.info[this.props.info.selected_template];
@@ -177,7 +177,7 @@ export default class IDTtyHTML extends React.Component {
         </body></html>
         `
     //Text Email        
-    let textEmail = ``;
+    let textEmail = `Inside Dentistry eBook\n\n${title}\n${description}\n\nDownload the Free Ebook!\n${link}`;
 
     let html = first;
 

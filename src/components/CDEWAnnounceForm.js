@@ -3,9 +3,11 @@ import React from 'react';
 const FIELDS = [
   { label: 'Email Name', name: 'emailName' },
   { label: 'Title', name: 'title' },
+  { label: 'Author', name: 'author' },
+  { label: 'Description', name: 'description' },
+  { label: 'Supporter', name: 'supporter' },
   { label: 'Link', name: 'link' },
   { label: 'Ebook Image Source Link', name: 'img' },
-  { label: 'Sponsor Image Source Link', name: 'sponsorImg' }
 ];
 
 export default class CDEWAnnounceForm extends React.Component {

@@ -26,9 +26,13 @@ export default class IDTtyHTML extends React.Component {
         let {
             emailName = 'undefined',
             title = 'To Be Updated',
+            author,
+            description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+            supporter,
+            unsubscribe = '%%PLUGIN_UNSUBSCRIBE: 1635405-UNSUBSCRIBE%%',
             link,
             img = 'http://placehold.it/300x350',
-            sponsorImg = 'http://placehold.it/100x30'
+
         } = this.props.info[this.props.info.selected_template];
 
         let { month, year } = this.props.info;
@@ -157,7 +161,7 @@ export default class IDTtyHTML extends React.Component {
         <table class="main-container" width="650" cellpadding="0" cellspacing="0" border="0" align="center">
             <tr>
                 <td align="center" style="font-size: 0.75rem; font-family:Helvetica, sans-serif; padding:7px 0; color:#666666;">
-                    Having trouble viewing this email? <a href="http://www.aegispublications.com/news/cdeworld/2018/03/ebook-pds.html" target="_blank" style="font-family:Helvetica, sans-serif; color:#2469aa; text-decoration:none;">Click here.</a>
+                    Having trouble viewing this email? <a href="http://www.aegispublications.com/news/cdeworld/${year}/${month}/${emailName}.html" target="_blank" style="font-family:Helvetica, sans-serif; color:#2469aa; text-decoration:none;">Click here.</a>
                    </td>
             </tr>
         </table>
@@ -175,7 +179,7 @@ export default class IDTtyHTML extends React.Component {
                                 <table cellpadding="0" cellspacing="0" border="0">
                                     <tr>
                                         <td class="header-forward" align="right" style="background:#2469aa;">
-                                            <a href="mailto:?subject=CDEWorld eBooks&amp;body=I thought you might be interested in this: http://www.aegispublications.com/news/cdeworld/2018/03/ebook-pds.html" target="_blank" style="text-decoration:none; color:#ffffff; font-size:12px;">
+                                            <a href="mailto:?subject=CDEWorld eBooks&amp;body=I thought you might be interested in this: ${link}" target="_blank" style="text-decoration:none; color:#ffffff; font-size:12px;">
                                     Forward to a Colleague
                                             </a>
                                         </td>
@@ -222,20 +226,20 @@ export default class IDTtyHTML extends React.Component {
                                             <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                                 <tr>
                                                     <td width="150" align="left" valign="top" class="ebook-image">
-                                                        <a href="https://cdeworld.com/ebooks/fundamentals-of-occlusion-diagnosing-and-treatment-occlusal-pathology" target="_blank">
-                                                            <img src="http://www.aegispublications.com/news/cdeworld/2018/03/email-lg_.png" border="0" style="padding:0 14px 14px 0; width:212px;">
+                                                        <a href="${link}" target="_blank">
+                                                            <img src="${img}" border="0" style="padding:0 14px 14px 0; width:212px;">
                                                         </a>
                                                     </td>
                                                     <td valign="top" class="ebook-text">
-                                                        <div style="font-family: Helvetica, sans-serif; color: #444444; font-size: 1.1em; line-height: 1.2em; font-weight: bold; padding:5px 0 5px 0;">Fundamentals of Occlusion: Diagnosing and Treating Occlusal Pathology</div>
-                                                        <div style="font-size: .9rem; line-height: 1.2em; padding-top: 5px;">
-                                                        By Scott Cairns, DDS 
+                                                        <div style="font-family: Helvetica, sans-serif; color: #444444; font-size: 1.1em; line-height: 1.2em; font-weight: bold; padding:5px 0 5px 0;">${title}</div>
+                                                        ${author ? `<div style="font-size: .9rem; line-height: 1.2em; padding-top: 5px;">
+                                                        ${author}
     <br>
-                                                        </div>
-                                                        <p style="font-size: .9rem; line-height:1.3em;">This article explores the methodology for approaching the separate aspects of occlusion and incorporating them in practice.<br>
-                                                      <span style="font-size: 0.8rem"><em>Supported by Pacific Dental Services</em></span>
+                                                        </div>` : ``}
+                                                        <p style="font-size: .9rem; line-height:1.3em;">${description}<br>
+                                                      ${supporter ? `<span style="font-size: 0.8rem"><em>Supported by ${supporter}</em></span>` : ``}
                                                       <div style="font-size: 20px; margin:0 0 34px 0;">
-                                                <a class="button" href="https://cdeworld.com/ebooks/fundamentals-of-occlusion-diagnosing-and-treatment-occlusal-pathology" target="_blank" style="background: #2469aa; padding: 11px 22px 9px 22px; display: inline-block; color: #ffffff; text-decoration: none; text-transform: uppercase; margin-top:7px; font-size: 0.8125em; border-radius: 5px;">
+                                                <a class="button" href="${link}" target="_blank" style="background: #2469aa; padding: 11px 22px 9px 22px; display: inline-block; color: #ffffff; text-decoration: none; text-transform: uppercase; margin-top:7px; font-size: 0.8125em; border-radius: 5px;">
                                                             Download the FREE CE eBook! 
                                                         </a>
                                                       </div>
@@ -259,7 +263,7 @@ export default class IDTtyHTML extends React.Component {
               <td align="center"  style="font-family:Arial, sans-serif; font-size:10px; color:#818181; text-align:center; padding:0px 10;"><br>
     You received this e-mail because you are a customer of <a href="https://www.aegisdentalnetwork.com" target="_blank" style="color:#818181; text-decoration:none;">AEGIS Dental Network</a> | CDEWorld.<br>
                 To ensure delivery, please add <span class="grey" style="color:#818181; text-decoration:none;"><a href="mailto:215892@news.aegispublications.com" target="_blank" style="color:#818181; text-decoration:none;">reply-215892@news.aegispublications.com</a></span> to your address book.<br />
-                %%PLUGIN_UNSUBSCRIBE: 1635405-UNSUBSCRIBE%%<br />
+                ${unsubscribe}<br />
                 CDEWorld part of the AEGIS Publication | 104 Pheasant Run, Suite 105 | Newtown, PA 18940 | <a href="https://www.aegisdentalnetwork.com/privacy-policy" target="_blank" style="color:#818181; text-decoration:none;">Privacy Policy</a></td>
             </tr>
     
@@ -270,7 +274,7 @@ export default class IDTtyHTML extends React.Component {
     </map>
     </body></html>`
         //Text Email        
-        let textEmail = ``;
+        let textEmail = `CDEWorld eBook\n\n${title}\n${description}\n\nDownload the Free Ebook!\n${link}`;
 
         let html = first;
 

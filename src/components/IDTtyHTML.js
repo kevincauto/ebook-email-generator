@@ -156,10 +156,10 @@ export default class IDTtyHTML extends React.Component {
             <textarea value={html} readOnly={true} />
             <button onClick={() => this.downloadHtml(html, emailName)} className="download-button">Download HTML Email</button>
           </div>
-          <div className="copyArea text-copy">
+          {/* <div className="copyArea text-copy">
             <textarea value={textEmail} readOnly={true} />
             <button onClick={() => this.downloadText(textEmail, emailName)} className="download-button">Download Text-Version Email</button>
-          </div>
+          </div> */}
         </div>
       </div>
     )

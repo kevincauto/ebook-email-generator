@@ -25,8 +25,10 @@ export default class IDTtyHTML extends React.Component {
     //Import data from the form fields.
     let {
       emailName = 'undefined',
-      title = 'To Be Updated',
+      title = 'Insert Title',
+      description = 'Lorem ipsume dolar emet hortus delirios mentas.  Lorem ipsume dolar emet hortus delirios mentas. Lorem ipsume dolar emet hortus delirios mentas.  Lorem ipsume dolar emet hortus delirios mentas.',
       link,
+      unsubscribe = '%%PLUGIN_UNSUBSCRIBE: 2145850-UNSUBSCRIBE%%',
       img = 'http://placehold.it/300x350',
       sponsorImg = 'http://placehold.it/100x30'
     } = this.props.info[this.props.info.selected_template];
@@ -63,7 +65,7 @@ export default class IDTtyHTML extends React.Component {
         <table width="612" border="0" cellspacing="0" cellpadding="0"  style="font-family:Gotham, sans-serif; border:solid 1px #e7e7e8; color:#000000; background-color:#ffffff;">
           <tbody>
             <tr>
-              <td align="center" style="font-size:11px; line-height:27px;"><a href="https://www.dentalaegis.com/idt/ebooks"></a>Having trouble viewing this email? <a href="http://aegispublications.com/news/idt/2018/03/ebook-straumann.html" target="_blank" style="color:#db1f28; text-decoration:none;">Click here</a>.</td>
+              <td align="center" style="font-size:11px; line-height:27px;"><a href="https://www.dentalaegis.com/idt/ebooks"></a>Having trouble viewing this email? <a href="http://aegispublications.com/news/idt/${year}/${month}/${emailName}.html" target="_blank" style="color:#db1f28; text-decoration:none;">Click here</a>.</td>
             </tr>
             <tr>
               <td><img src="http://aegispublications.com/news/idt/2016/06/ebook-header.png" width="503" height="138" alt="" style="margin:0 0 14px 24px;"/></td>
@@ -83,22 +85,22 @@ export default class IDTtyHTML extends React.Component {
                 <tbody>
                   <tr>
                     <td width="259" rowspan="2" valign="top">
-                      <a href="https://www.dentalaegis.com/idt/ebooks/where-will-your-lab-be-5-years-from-now" target="_blank"><img src="http://aegispublications.com/news/idt/2018/03/idt-email-lg.png" width="253" height="329" alt="" style="margin:0 17px 0 19px;"/></a>
+                      <a href="${link}" target="_blank"><img src="${img}" width="253" height="329" alt="" style="margin:0 17px 0 19px;"/></a>
                     </td>
                     <td width="353" height="132" style="padding:0 54px 0 0;">
-                      <div style="font-size:16px; margin:6px 0 7px 0;"><strong>WHERE WILL YOUR LAB BE 5 Years from NOW?</strong></div>
-                      <div style="font-size:13px; line-height:15px;">Dental laboratories are facing tremendous pressure to deliver high-quality restorations faster. Grow your business by offering these patient-centric solutions that result in a collaborative, efficient, and flexible workflow.</div>
+                      <div style="font-size:16px; margin:6px 0 7px 0;"><strong>${title}</strong></div>
+                      <div style="font-size:13px; line-height:15px;">${description}</div>
                       <div style="font-family:Gotham,sans-serif;font-size:14px; color:#000000; width:267px; clear:both;">
                 <br>
                 Powered by: </div>
                 <div style="font-family:Gotham,sans-serif;font-size:14px; color:#000000; width:267px; clear:both;">
-                    <img src="https://www.aegisdentalnetwork.com/media/thumbnail/67461/140x140" width="110" style="margin:7px 0 0 0;" alt="Client logo">    
+                    <img src="${sponsorImg}" width="110" style="margin:7px 0 0 0;" alt="Client logo">    
                 </div>
                       </td>
                   </tr>
                   <tr>
                     <td height="152" valign="top">
-                      <a href="https://www.dentalaegis.com/idt/ebooks/where-will-your-lab-be-5-years-from-now" target="_blank"><img src="http://aegispublications.com/news/idt/2016/06/ebook-btn.png" width="240" height="113" alt="" style="margin:21px 0 0 0;"/></a>
+                      <a href="${link}" target="_blank"><img src="http://aegispublications.com/news/idt/2016/06/ebook-btn.png" width="240" height="113" alt="" style="margin:21px 0 0 0;"/></a>
                     </td>
                   </tr>
                   <tr>
@@ -128,7 +130,7 @@ export default class IDTtyHTML extends React.Component {
                     <br />
                     You received this e-mail because you are a customer of <a href="https://www.aegisdentalnetwork.com" style="color:#666 !important; text-decoration:none;" target="_blank">AEGIS Dental Network</a> | <em>Inside Dental Technology</em>.<br />
                     To ensure delivery, please add <a href="mailto:reply-289795@news.aegispublications.com" style="color:#666 !important; text-decoration:none;" target="_blank">reply-289795@news.aegispublications.com</a> to your address book<br />
-                    %%PLUGIN_UNSUBSCRIBE: 2145850-UNSUBSCRIBE%% <br />
+                    ${unsubscribe} <br />
                     <em>Inside Dental Technology</em> an AEGIS Publication | 104 Pheasant Run, Suite 105 | Newtown, PA 18940 | <a href="https://www.aegisdentalnetwork.com/privacy-policy" style="color:#666; text-decoration:none;" target="_blank">Privacy Policy</a><br />
                     &nbsp;</td>
             </tr>
@@ -146,7 +148,7 @@ export default class IDTtyHTML extends React.Component {
         </body></html>
         `
     //Text Email        
-    let textEmail = ``;
+    let textEmail = `IDT eBook\n\n${title}\n${description}\n\nDownload the Free Ebook!\n${link}`;
 
     let html = first;
 
