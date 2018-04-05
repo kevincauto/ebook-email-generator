@@ -112,6 +112,13 @@ export default class IDTtyHTML extends React.Component {
                   </td>
               </tr>
               <tr>
+              <!-- Fine Print Footer -->
+              <td colspan="2" align="center">
+                <img src="http://aegispublications.com/news/id/webinars/webinar-footer.jpg" width="580" height="85" style="margin-bottom: 15px;" />
+              </td>
+              <!-- /Fine Print Footer -->
+            </tr>
+              <tr>
                 <td colspan="2">
                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tbody>
@@ -152,11 +159,10 @@ export default class IDTtyHTML extends React.Component {
             </tbody>
           </table></td>
           </tr>
+  
+
         <tr>
-          <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td align="center" style="font-family:Arial, sans-serif; font-size:11px; text-align:center; color:#818181; font-size:10px; background-color:#efefef;" valign="middle"> 
+            <td align="center" style="font-family:Arial, sans-serif; font-size:11px; text-align:center; color:#818181; font-size:10px; background-color:#efefef; padding-bottom: 10px;" valign="middle"> 
                 <br>
                 You received this e-mail because you are a customer of <a href="https://www.aegisdentalnetwork.com" target="_blank" style="color:#818181; text-decoration:none;">AEGIS Dental Network</a> | <em>Compendium</em>.<br />
                 To ensure delivery, please add <a href="mailto:215892@news.aegispublications.com" target="_blank" style="color:#818181 !important; text-decoration:none !important;">reply-207852@news.aegispublications.com</a> to your address book.<br />

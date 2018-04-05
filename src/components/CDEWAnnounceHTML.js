@@ -259,7 +259,12 @@ export default class IDTtyHTML extends React.Component {
             </tr>
         </table>
         <table class="main-container footer" width="650" cellpadding="0" cellspacing="0" border="0" align="center">
-            <tr>
+        <tr>
+            <!-- Fine Print Footer -->
+            <td colspan="2" align="center"><img src="http://cdeworld.com/media/3742" width="575" height="76" style="margin-top:10px; padding-top:0px; padding-bottom:0px;" /></td>
+            <!-- /Fine Print Footer -->
+        </tr>    
+        <tr>
               <td align="center"  style="font-family:Arial, sans-serif; font-size:10px; color:#818181; text-align:center; padding:0px 10;"><br>
     You received this e-mail because you are a customer of <a href="https://www.aegisdentalnetwork.com" target="_blank" style="color:#818181; text-decoration:none;">AEGIS Dental Network</a> | CDEWorld.<br>
                 To ensure delivery, please add <span class="grey" style="color:#818181; text-decoration:none;"><a href="mailto:215892@news.aegispublications.com" target="_blank" style="color:#818181; text-decoration:none;">reply-215892@news.aegispublications.com</a></span> to your address book.<br />

@@ -99,7 +99,15 @@ export default class CCEDLiveWebinarHTML extends React.Component {
                     </div>
                 </td>
               </tr>
-              
+
+              <tr>
+              <!-- Fine Print Footer -->
+              <td colspan="2" align="center">
+                <img src="http://aegispublications.com/news/id/webinars/webinar-footer.jpg" width="580" height="85" style="margin-bottom: 15px;" />
+              </td>
+              <!-- /Fine Print Footer -->
+            </tr>
+
               <tr>
                 <td colspan="2">
                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
