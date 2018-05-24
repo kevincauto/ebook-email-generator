@@ -31,7 +31,8 @@ export default class IDTtyHTML extends React.Component {
       link,
       unsubscribe = "%%PLUGIN_UNSUBSCRIBE: 1654490-UNSUBSCRIBE%%",
       img = 'http://placehold.it/300x350',
-      sponsorImg = 'http://placehold.it/100x30'
+      sponsor,
+      sponsorImg
     } = this.props.info[this.props.info.selected_template];
 
     let { month, year } = this.props.info;
@@ -98,12 +99,19 @@ export default class IDTtyHTML extends React.Component {
         </div>
                       </td>
                   </tr>
+                  
                   <tr>
                     <td height="66" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; font-size:10px; color:#000000; font-family:'Arial', sans-serif">
+                    ${sponsorImg ? `
                               <br>
                   SPONSORED BY: <br>
-                              <img src="${sponsorImg}"  alt="client logo"  style="vertical-align:bottom; margin:4px 0 0 0;"> </td>
+                              <img src="${sponsorImg}"  alt="client logo"  style="vertical-align:bottom; margin:4px 0 0 0;"> 
+                              ` : ``}
+                              </td>
+
                   </tr>
+                 
+                  
                   
                   <tr>
                     <td height="152" valign="top">
@@ -177,7 +185,7 @@ export default class IDTtyHTML extends React.Component {
         </body></html>
         `
     //Text Email        
-    let textEmail = `Inside Dentistry eBook\n\n${title}\n${description}\n\nDownload the Free Ebook!\n${link}`;
+    let textEmail = `Inside Dentistry eBook\n\n${title}\n${author ? `${author}\n` : ``}${description}\n\n${sponsor ? `Sponsored by: ${sponsor}\n\n` : ``}Download the Free Ebook!\n${link}`;
 
     let html = first;
 

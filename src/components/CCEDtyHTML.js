@@ -28,7 +28,7 @@ export default class CCEDLiveWebinarHTML extends React.Component {
       title = 'To Be Updated',
       link,
       img = 'http://placehold.it/300x350',
-      sponsorImg = 'http://placehold.it/100x30'
+      sponsorImg
     } = this.props.info[this.props.info.selected_template];
 
     let { month, year } = this.props.info;
@@ -94,8 +94,11 @@ export default class CCEDLiveWebinarHTML extends React.Component {
               <tr>
                 <td valign="top" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; font-size:10px; color:#000000; font-family:'Arial', sans-serif">
                   <div style="margin:7px 0 0 0;">
-                      SUPPORTED BY: <br>
+                  ${sponsorImg ? `
+                  SUPPORTED BY: <br>
                           <img src="${sponsorImg}"  style="margin:4px 0 0 0; width:107px;" alt="client logo">
+                  ` : ``}
+                      
                     </div>
                 </td>
               </tr>

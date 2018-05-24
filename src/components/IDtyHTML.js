@@ -28,7 +28,7 @@ export default class CCEDLiveWebinarHTML extends React.Component {
       title = 'To Be Updated',
       link,
       img = 'http://placehold.it/300x350',
-      sponsorImg = 'http://placehold.it/50x30'
+      sponsorImg
     } = this.props.info[this.props.info.selected_template];
 
     let { month, year } = this.props.info;
@@ -81,11 +81,15 @@ export default class CCEDLiveWebinarHTML extends React.Component {
     You recently downloaded <strong>${title}</strong>.
     We hope you enjoyed it! If you found the information useful, please consider <a href="mailto:?subject=Forward: Inside Dentistry eBooks&amp;body=I thought you might be interested in this: ${link}" style="text-decoration:none;color:#c61f27" target="_blank" data-hs-link-id="0">sharing it with colleagues</a>. </div>
         <div style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; font-size:10px; color:#000000; font-family:'Arial', sans-serif; clear:both;">
-            <br>
-            SPONSORED BY: </div>
-            <div style="font-family:Gotham,sans-serif;font-size:14px; color:#000000; width:267px; clear:both;">
-                <img src="${sponsorImg}" alt="sponsor logo"  style="vertical-align:bottom; margin:4px 0 0 0;">    
-            </div>
+            
+            ${sponsorImg ?
+        `<br>     
+        SPONSORED BY: </div>
+              <div style="font-family:Gotham,sans-serif;font-size:14px; color:#000000; width:267px; clear:both;">
+                  <img src="${sponsorImg}" alt="sponsor logo"  style="vertical-align:bottom; margin:4px 0 0 0;">    
+              </div>` :
+        ``}
+
             <div style="font-family:Gotham,sans-serif;font-size:14px; color:#000000; width:267px; clear:both;">
             <br>
               <a href="https://www.aegisdentalnetwork.com/id/ebooks/" target="_blank" style="text-decoration:none; color:#c61f27" data-hs-link-id="1">View Full eBook Library ⇛</a>

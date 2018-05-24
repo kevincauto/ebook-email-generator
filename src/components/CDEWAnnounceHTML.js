@@ -279,7 +279,7 @@ export default class IDTtyHTML extends React.Component {
     </map>
     </body></html>`
         //Text Email        
-        let textEmail = `CDEWorld eBook\n\n${title}\n${description}\n\nDownload the Free Ebook!\n${link}`;
+        let textEmail = `CDEWorld eBook\n\n${title}\n${author ? `${author}\n` : ``}${description}\n\n${supporter ? `Supported by: ${supporter}\n\n` : ``}Download the Free Ebook!\n${link}`;
 
         let html = first;
 

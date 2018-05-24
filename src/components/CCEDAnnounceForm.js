@@ -11,6 +11,7 @@ const FIELDS = [
   { label: 'Second Provider', name: 'provider2' },
   { label: 'Link', name: 'link' },
   { label: 'Ebook Image Source Link', name: 'img' },
+  { label: 'Sponsor Name', name: 'sponsor' },
   { label: 'Sponsor Image Source Link', name: 'sponsorImg' }
 ];
 

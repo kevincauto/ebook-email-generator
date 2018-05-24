@@ -25,8 +25,8 @@ export default class IDTtyHTML extends React.Component {
     //Import data from the form fields.
     let {
       emailName = 'undefined',
-      ebookTitle = 'Insert Title',
-      title1 = 'Insert Title',
+      ebookTitle = 'Ebook Title',
+      title1 = '',
       author1 = '',
       provider1 = '',
       title2 = '',
@@ -35,7 +35,8 @@ export default class IDTtyHTML extends React.Component {
       unsubscribe = '%%PLUGIN_UNSUBSCRIBE: 2141821-UNSUBSCRIBE%%',
       link,
       img = 'http://placehold.it/300x350',
-      sponsorImg = 'http://placehold.it/100x30'
+      sponsor,
+      sponsorImg
     } = this.props.info[this.props.info.selected_template];
 
     let { month, year } = this.props.info;
@@ -84,23 +85,28 @@ export default class IDTtyHTML extends React.Component {
               <tr>
                 <td width="259" rowspan="2" valign="top" style="font-size:10px; color:#656464;">
                   <a href="${link}" target="_blank"><img src="${img}" width="253" style="margin:0 17px 0 19px;"/></a>
-                    <div style="margin:7px 0 0 24px;">
+                    ${sponsorImg ?
+        `<div style="margin:7px 0 0 24px;">
                       SUPPORTED BY: <br>
                           <img src="${sponsorImg}"  style="margin:4px 0 0 0;" alt="client logo" width="100">
-                    </div> 
+                    </div> ` :
+        ``}
+                  
                      <br />
+
                 </td>
                 <td width="353" height="66" valign="top" style="padding:0 32px 0 0;">
                   <div style="font-size:16px; margin:6px 0 14px 0; color:#87764b;"><strong>${ebookTitle}</strong></div>
                   <div style="font-size:13px; color:#656464;">
             <strong>${title1}</strong><br>
             ${author1 ? `<em>${author1}</em><br>` : ``}
-            Provider: ${provider1}<br><br>
+            ${provider1 ? `Provider: ${provider1}<br><br>` : `<br>`}
     
     ${title2 ? `<strong>${title2}
     </strong><br>
     ${author2 ? `<em>${author2}</em><br>` : ``}
-    Provider: ${provider2}` : ``}
+    ${provider2 ? `Provider: ${provider2}` : ``}
+  `: ``}
     <br>
     <br>
                   </div>
@@ -186,7 +192,7 @@ export default class IDTtyHTML extends React.Component {
     </body></html>
     `
     //Text Email        
-    let textEmail = `Compendimu eBook\n\n${ebookTitle}\n\n${title1}\n\n${title2}Download the Free Ebook!\n${link}`;
+    let textEmail = `Compendium eBook\n\n${ebookTitle}\n\n${title1 ? `${title1}\n` : ``}${author1 ? `${author1}\n` : ``}\n${title2 ? `${title2}\n` : ``}${author2 ? `${author2}\n` : ``}\n${sponsor ? `Sponsored by: ${sponsor}\n\n` : ``}Download the Free Ebook!\n${link}`;
 
     let html = first;
 

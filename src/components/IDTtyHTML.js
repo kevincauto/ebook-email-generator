@@ -28,7 +28,7 @@ export default class IDTtyHTML extends React.Component {
       title = 'To Be Updated',
       link,
       img = 'http://placehold.it/300x350',
-      sponsorImg = 'http://placehold.it/100x30'
+      sponsorImg
     } = this.props.info[this.props.info.selected_template];
 
     let { month, year } = this.props.info;
@@ -74,19 +74,26 @@ export default class IDTtyHTML extends React.Component {
                     <tbody>
                       <tr>
                         <td width="259">
-                          <a href="${link}" target="_blank"><img src="${img}" width="253" height="329" alt="" style="margin:0 17px 0 19px;" /></a>
+                          <a href="${link}" target="_blank"><img src="${img}" width="253" alt="" style="margin:0 17px 0 19px;" /></a>
                         </td>
                         <td width="353" style="padding:0 54px 0 0;">
                           <div style="font-family:Gotham,sans-serif;font-size:14px; color:#000000; width:267px;">
                             You recently downloaded <strong>${title}</strong>.
   We hope you enjoyed it! If you found the information useful, please consider <a href="mailto:?subject=Forward: Inside Dental Technology eBooks&amp;body=I thought you might be interested in this: ${link}" style="text-decoration:none;color:#c61f27" target="_blank" data-hs-link-id="0">sharing it with colleagues</a>. </div>
-                          <div style="font-family:Gotham,sans-serif;font-size:14px; color:#000000; width:267px; clear:both;">
-                            <br>
+  <br>
+  
+                            
+                            ${sponsorImg ?
+        `<div style="font-family:Gotham,sans-serif;font-size:14px; color:#000000; width:267px; clear:both;">
                               <br>
-                                Sponsored by: </div>
+                              Sponsored by: </div>
                               <div style="font-family:Gotham,sans-serif;font-size:14px; color:#000000; width:267px; clear:both;">
-                                <img src="${sponsorImg}" width="110" style="margin:7px 0 0 0;" alt="Client logo">    
-          </div>
+                              <img src="${sponsorImg}" width="110" style="margin:7px 0 0 0;" alt="Client logo">    
+        </div>
+                              ` :
+        ``}
+
+                             
                                 <div style="font-family:Gotham,sans-serif;font-size:14px; color:#000000; width:267px; clear:both;">
                                   <br>
                                     <a href="https://www.dentalaegis.com/idt/ebooks/" target="_blank" style="text-decoration:none; color:#c61f27" data-hs-link-id="1">View Full eBook Library ⇛</a>

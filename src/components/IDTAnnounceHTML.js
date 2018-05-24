@@ -30,7 +30,8 @@ export default class IDTtyHTML extends React.Component {
       link,
       unsubscribe = '%%PLUGIN_UNSUBSCRIBE: 2145850-UNSUBSCRIBE%%',
       img = 'http://placehold.it/300x350',
-      sponsorImg = 'http://placehold.it/100x30'
+      sponsor,
+      sponsorImg
     } = this.props.info[this.props.info.selected_template];
 
     let { month, year } = this.props.info;
@@ -90,12 +91,15 @@ export default class IDTtyHTML extends React.Component {
                     <td width="353" height="132" style="padding:0 54px 0 0;">
                       <div style="font-size:16px; margin:6px 0 7px 0;"><strong>${title}</strong></div>
                       <div style="font-size:13px; line-height:15px;">${description}</div>
+                      ${sponsorImg ? ` <div style="font-family:Gotham,sans-serif;font-size:14px; color:#000000; width:267px; clear:both;">
+                      <br>
+                   
+                      Powered by: </div>
                       <div style="font-family:Gotham,sans-serif;font-size:14px; color:#000000; width:267px; clear:both;">
-                <br>
-                Powered by: </div>
-                <div style="font-family:Gotham,sans-serif;font-size:14px; color:#000000; width:267px; clear:both;">
-                    <img src="${sponsorImg}" width="110" style="margin:7px 0 0 0;" alt="Client logo">    
-                </div>
+                          <img src="${sponsorImg}" width="110" style="margin:7px 0 0 0;" alt="Client logo">    
+                      </div>`
+        : ``}
+                     
                       </td>
                   </tr>
                   <tr>
@@ -126,8 +130,7 @@ export default class IDTtyHTML extends React.Component {
               <td>&nbsp;</td>
             </tr>
              <tr>
-                <td align="center" style="font-family:Arial, sans-serif; font-size:11px; text-align:center; color:#666666; font-size:10px; border-bottom: #000 solid 1px;" valign="middle">
-                    <br />
+                <td align="center" style="font-family:Arial, sans-serif; font-size:11px; text-align:center; color:#666666; font-size:10px;" valign="middle">
                     You received this e-mail because you are a customer of <a href="https://www.aegisdentalnetwork.com" style="color:#666 !important; text-decoration:none;" target="_blank">AEGIS Dental Network</a> | <em>Inside Dental Technology</em>.<br />
                     To ensure delivery, please add <a href="mailto:reply-289795@news.aegispublications.com" style="color:#666 !important; text-decoration:none;" target="_blank">reply-289795@news.aegispublications.com</a> to your address book<br />
                     ${unsubscribe} <br />
@@ -148,7 +151,7 @@ export default class IDTtyHTML extends React.Component {
         </body></html>
         `
     //Text Email        
-    let textEmail = `IDT eBook\n\n${title}\n${description}\n\nDownload the Free Ebook!\n${link}`;
+    let textEmail = `IDT eBook\n\n${title}\n${description}\n\n${sponsor ? `Powered by: ${sponsor}\n\n` : ``}Download the Free Ebook!\n${link}`;
 
     let html = first;
 
